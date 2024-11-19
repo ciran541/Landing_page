@@ -273,7 +273,7 @@
     }
 
     .tlc-partners-heading {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .tlc-container {
@@ -437,6 +437,9 @@
     .faq-title {
         font-size: 28px;
     }
+    .tlc-reviews-text{
+      font-size: 24px;
+    }
 }
 
 .how-it-works {
@@ -560,7 +563,6 @@
       padding: 3rem 1rem;
     }
   }
-
 
   .footer {
     background-color: #f8f9fa;
