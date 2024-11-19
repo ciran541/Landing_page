@@ -343,9 +343,10 @@
 
 /* FAQ section */
 .faq {
-    background: linear-gradient(135deg, #f8f9fa 0%, #dee2e6 50%, #e9ecef 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
     padding: 40px 0;
 }
+
 
 .faq-container {
     max-width: 800px;
@@ -365,8 +366,8 @@
     margin-bottom: 15px;
     overflow: hidden;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    /* border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); */
 }
 
 .faq-question {
