@@ -57,6 +57,228 @@
     padding: 60px 0;
 }
 
+/* Modern Form Styling */
+.tlc-form-wrapper {
+  position: relative;
+  padding-top: 30px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.tlc-form-header-overlap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #1e3a8a, #1e40af);
+  color: white;
+  padding: 18px 28px;
+  z-index: 1;
+  transform: translateY(-50%);
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tlc-form-header-overlap h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+  letter-spacing: 0.3px;
+}
+
+.tlc-form-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.tlc-form-card:hover {
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tlc-form-group {
+  margin-bottom: 28px;
+}
+
+.tlc-form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.tlc-radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.tlc-radio-group label {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0;
+}
+
+.tlc-radio-group label:hover {
+  background: #f8fafc;
+  border-color: #2563eb;
+}
+
+.tlc-radio-group input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tlc-radio-group input[type="radio"]:checked {
+  border-color: #2563eb;
+  background: #f0f7ff;
+}
+
+.tlc-radio-group input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  animation: radioScale 0.15s ease;
+}
+
+@keyframes radioScale {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  color: #54c2b2;
+  background: #ffffff;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.tlc-btn {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(to right, #1e3a8a, #1e40af);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tlc-btn:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tlc-btn:active {
+  transform: translateY(1px);
+}
+
+.tlc-btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+
+.tlc-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.tlc-btn-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.tlc-form-page {
+  display: none;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.tlc-form-page.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 640px) {
+  .tlc-form-card {
+    padding: 24px;
+    
+  }
+
+  .tlc-form-header-overlap {
+    padding: 14px 20px;
+    width: calc(100% - 24px);
+    left: 12px;
+  }
+
+  .tlc-form-header-overlap h2 {
+    font-size: 18px;
+  }
+
+  .tlc-radio-group {
+    grid-template-columns: 1fr;
+  }
+
+  .tlc-btn-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 .tlc-hero-content {
     display: flex;
     justify-content: space-between;
@@ -72,31 +294,23 @@
     font-weight: 600;
 }
 
-.tlc-form-card {
-    background: rgba(255, 255, 255, 0.823);
-    /* border-radius: 15px; */
-    padding: 35px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
 
-.tlc-form-page {
+
+/* .tlc-form-page {
     display: none;
 }
 
 .tlc-form-page.active {
     display: block;
-}
+} */
 
-.tlc-form-group {
+/* .tlc-form-group {
     margin-bottom: 20px;
 }
 
 .tlc-form-group label {
     display: block;
     margin-bottom: 8px;
-    color: #052d4a;
     font-weight: bold;
 }
 
@@ -105,22 +319,11 @@
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
-    /* border-radius: 8px; */
+    border-radius: 8px;
     font-size: 16px;
-}
-
-/* .tlc-checkbox-group {
-    margin: 20px 0;
 } */
 
-/* .tlc-checkbox-group label {
-    display: flex;
-    gap: 10px;
-    font-size: 14px;
-    line-height: 1.4;
-} */
-
-.tlc-btn {
+/* .tlc-btn {
     background: #052d4a;
     color: white;
     border: none;
@@ -144,7 +347,7 @@
 .tlc-btn-group {
     display: flex;
     gap: 10px;
-}
+} */
 
 @media (max-width: 768px) {
     .tlc-header-content {
@@ -172,11 +375,6 @@
         font-size: 32px;
     }
 
-    .tlc-form-card {
-        margin: 0 auto;
-        padding: 25px;
-    }
-
     .tlc-form-group label {
         text-align: left;
     }
@@ -184,8 +382,9 @@
 
 /* Add new styles for the headline section */
 .tlc-headline-section {
-    padding: 60px 0;
-    background: white; 
+    padding: 30px 0;
+    background: linear-gradient(145deg, #fbfbfb 0%, #f3f3f3 100%);
+    /* background: white;  */
     text-align: center;
     margin-bottom: -30px;
 }
@@ -319,8 +518,8 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: linear-gradient(145deg, #fbfbfb 0%, #f3f3f3 100%);
-    /* background-color: white; */
+    /* background: linear-gradient(145deg, #fbfbfb 0%, #f3f3f3 100%); */
+    background-color: white;
 }
 
 .tlc-reviews-text {
@@ -330,7 +529,6 @@
     font-size: 36px;
     color: #052d4a;
     font-weight: 600;
-    margin-bottom: 10px;
 }
 
 .google-logo {
@@ -339,6 +537,10 @@
     width: auto;
     height: auto;
     display: inline-block;
+}
+
+.taggbox{
+  margin-top: -40px;
 }
 
 /* FAQ section */
@@ -446,7 +648,6 @@
     padding: 4rem 2rem;
     position: relative;
     overflow: hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   /* Wavy background */
@@ -570,7 +771,6 @@
     text-align: center;
     border-top: 1px solid #eee;
     margin-top: auto;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .footer-container {
@@ -602,3 +802,70 @@
       padding: 1.5rem 1rem;
     }
   }
+
+.notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+    transform: translateX(120%);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    color: white;
+}
+
+.notification.success {
+    background-color: #4CAF50;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+.notification.loading {
+    background-color: #052d4a;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-close {
+    margin-left: auto;
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+    opacity: 0.8;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.notification-close:hover {
+    opacity: 1;
+}
+
+.date-header {
+  text-align: center;
+  color:red;
+  padding: 1rem;
+  font-size: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+@media screen and (max-width: 640px) {
+  .date-header {
+    font-size: 0.9rem;
+    
+  }
+}
