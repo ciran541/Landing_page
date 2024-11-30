@@ -253,7 +253,7 @@ input[type="number"]:focus {
 
 @media screen and (max-width: 640px) {
   .tlc-form-card {
-    padding: 24px;
+   padding: 35px;
     
   }
 
