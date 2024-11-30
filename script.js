@@ -342,15 +342,50 @@ document.querySelector('.cta-button').addEventListener('click', function() {
   });
 
   function nextPage() {
-    document.getElementById('page1').classList.remove('active');
-    document.getElementById('page2').classList.add('active');
-    // Update header text
-    document.querySelector('.tlc-form-header-overlap h2').textContent = 'Final Step!';
+    // Get the form wrapper element
+    const formWrapper = document.querySelector('.tlc-form-wrapper');
+    
+    // Get the form's position relative to the viewport
+    const formRect = formWrapper.getBoundingClientRect();
+    
+    // Calculate the scroll target with increased offset (80px instead of 20px)
+    const scrollTarget = window.pageYOffset + formRect.top - 80;
+    
+    // Smooth scroll to the target position
+    window.scrollTo({
+        top: scrollTarget,
+        behavior: 'smooth'
+    });
+
+    // Wait for scroll to complete before changing pages
+    setTimeout(() => {
+        document.getElementById('page1').classList.remove('active');
+        document.getElementById('page2').classList.add('active');
+        // Update header text
+        document.querySelector('.tlc-form-header-overlap h2').textContent = 'Final Step!';
+    }, 300);
 }
 
 function previousPage() {
-    document.getElementById('page2').classList.remove('active');
-    document.getElementById('page1').classList.add('active');
-    // Reset header text
-    document.querySelector('.tlc-form-header-overlap h2').textContent = 'What are you looking for?';
+    // Get the form wrapper element
+    const formWrapper = document.querySelector('.tlc-form-wrapper');
+    
+    // Get the form's position relative to the viewport
+    const formRect = formWrapper.getBoundingClientRect();
+    
+    // Calculate the scroll target with increased offset (80px instead of 20px)
+    const scrollTarget = window.pageYOffset + formRect.top - 80;
+    
+    // Smooth scroll to the target position
+    window.scrollTo({
+        top: scrollTarget,
+        behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+        document.getElementById('page2').classList.remove('active');
+        document.getElementById('page1').classList.add('active');
+        // Reset header text
+        document.querySelector('.tlc-form-header-overlap h2').textContent = 'What are you looking for?';
+    }, 300);
 }
