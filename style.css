@@ -70,7 +70,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #1e3a8a, #1e40af);
+  background: linear-gradient(to right, #052d4a, #084267);
   color: white;
   padding: 18px 28px;
   z-index: 1;
@@ -205,7 +205,7 @@ input[type="number"]:focus {
   font-size: 18px;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(to right, #1e3a8a, #1e40af);
+  background: linear-gradient(to right, #052d4a, #084267);
   border: none;
   border-radius: 6px;
   cursor: pointer;
