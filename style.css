@@ -262,7 +262,7 @@ input[type="number"]:focus {
 
 @media screen and (max-width: 640px) {
   .tlc-form-card {
-    padding: 35px;
+    padding: 50px;
   }
 
   .tlc-form-header-overlap {
