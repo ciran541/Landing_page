@@ -1,7 +1,7 @@
 // Update date automatically
 function updateDate() {
     const date = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
+    const options = {year: 'numeric', month: 'short', day: 'numeric' };
     document.getElementById('updateDate').textContent = 
         `Latest rate As Of ${date.toLocaleDateString('en-US', options)}`;
 }
