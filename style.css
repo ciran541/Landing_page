@@ -63,7 +63,6 @@
   padding-top: 30px;
   max-width: 600px;
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .tlc-form-header-overlap {
@@ -75,7 +74,7 @@
   padding: 18px 28px;
   z-index: 1;
   transform: translateY(-50%);
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -90,7 +89,7 @@
 .tlc-form-card {
   background: #ffffff;
   padding: 35px;
-  border-radius: 4px;
+  border-radius: 8px;
   width: 100%;
   max-width: 500px;
   box-shadow: 
@@ -109,14 +108,16 @@
   margin-bottom: 28px;
 }
 
-.tlc-form-group label {
+/* Updated: Increased font size for form headers */
+.tlc-form-group > label {
   display: block;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #374151;
-  margin-bottom: 8px;
+  color: #1f2937;
+  margin-bottom: 12px;
 }
 
+/* Updated: Reduced font size and changed color for radio options */
 .tlc-radio-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -133,11 +134,15 @@
   cursor: pointer;
   transition: all 0.2s ease;
   margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
 }
 
 .tlc-radio-group label:hover {
   background: #f8fafc;
-  border-color: #2563eb;
+  border-color: #052d4a;
+  color: #052d4a;
 }
 
 .tlc-radio-group input[type="radio"] {
@@ -153,7 +158,7 @@
 }
 
 .tlc-radio-group input[type="radio"]:checked {
-  border-color: #2563eb;
+  border-color: #052d4a;
   background: #f0f7ff;
 }
 
@@ -166,8 +171,12 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #2563eb;
+  background-color: #052d4a;
   animation: radioScale 0.15s ease;
+}
+
+.tlc-radio-group input[type="radio"]:checked + span {
+  color: #052d4a;
 }
 
 @keyframes radioScale {
@@ -183,7 +192,7 @@ input[type="number"] {
   padding: 12px 14px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   transition: all 0.2s ease;
   color: #54c2b2;
@@ -194,7 +203,7 @@ input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus {
-  border-color: #2563eb;
+  border-color: #052d4a;
   outline: none;
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
@@ -253,8 +262,7 @@ input[type="number"]:focus {
 
 @media screen and (max-width: 640px) {
   .tlc-form-card {
-   padding: 35px;
-    
+    padding: 35px;
   }
 
   .tlc-form-header-overlap {
